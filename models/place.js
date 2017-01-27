@@ -1,8 +1,8 @@
 'use strict';
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const db = require('./db');
 
-var Place = db.define('Place', {
+var Place = db.define('place', {
   address:
   {
     type: Sequelize.STRING,
@@ -40,4 +40,4 @@ var Place = db.define('Place', {
 
 
 
-module.exports = db;
+module.exports = Place;

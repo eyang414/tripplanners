@@ -1,10 +1,10 @@
 'use strict';
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const db = require('./db');
 const Place = require('./place.js');
 
 
-var Activity = db.define('Activity', {
+var Activity = db.define('activity', {
 
   name:
   {
@@ -18,13 +18,10 @@ var Activity = db.define('Activity', {
     allowNull: false
   }
 
-})
+});
 
 
 Activity.belongsTo(Place);
 
 
-
-
-
-module.exports = db;
+module.exports = Activity;

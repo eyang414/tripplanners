@@ -1,10 +1,10 @@
 'use strict';
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const db = require('./db');
 const Place = require('./place.js');
 
 
-var Restaurant = db.define('Restaurant', {
+var Restaurant = db.define('restaurant', {
 
   name:
   {
@@ -20,19 +20,15 @@ var Restaurant = db.define('Restaurant', {
 
   price:
   {
-    type: Sequelize.ENUM('1','2','3','4','5'),
-    //type: Sequelize.INTEGER,
+    // type: Sequelize.ENUM(1, 2, 3, 4, 5),
+    type: Sequelize.INTEGER,
     allowNull: false,
     validate: { min: 1, max: 5 }
   }
 
-})
-
+});
 
 
 Restaurant.belongsTo(Place);
 
-
-
-
-module.exports = db;
+module.exports = Restaurant;

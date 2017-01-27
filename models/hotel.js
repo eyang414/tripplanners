@@ -1,9 +1,9 @@
 'use strict';
-const Sequelize = require('sequelize')
+const Sequelize = require('sequelize');
 const db = require('./db');
-const place = require('./place.js');
+const Place = require('./place.js');
 
-var Hotel = db.define('Hotel', {
+var Hotel = db.define('hotel', {
 
   name:
   {
@@ -25,15 +25,15 @@ var Hotel = db.define('Hotel', {
     allowNull: false
   }
 
-})
+});
 
 
-console.log('you should see hotel right here', Hotel);
-Hotel.belongsTo(place);
-
-
-
+// console.log('you should see hotel right here', Hotel);
+Hotel.belongsTo(Place);
 
 
 
-module.exports = db;
+
+
+
+module.exports = Hotel;
